@@ -36,31 +36,64 @@ include('adminpartials/head.php');
       <div class="row">
         <div class="col-sm-9">
           
-        
-          <?php
-          include('../partials/connect.php');
 
-          $sql="Select * from orders";;
-          $results=$connect->query($sql);
-          while($final=$results->fetch_assoc()){ ?>
+        <div class="container overflow-hidden">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Customer ID</th>
+                    <th scope="col">ADDRESS</th>
+                    <th scope="col">PHONE</th>
+                    <th scope="col">TOTAL</th>
+                    <th scope="col">ACTION</th>
+                  </tr>
+                </thead>
+                <?php
+                include('../partials/connect.php');
 
-            <a href="ordershow.php?pro_id=<?php echo $final['id']?>">
-            <h3><?php echo $final['id'] ?>: <?php echo $final['customer_id']?></h3><br>
-            <h3>Address: <?php echo $final['address']?></h3><br>
-            <h3>Phone: <?php echo $final['phone']?></h3><br>
-            <h3>Total: <?php echo $final['total']?></h3><br>
-
-          </a>
+                $sql = "SELECT * FROM orders";
+                $results = $connect->query($sql);
+                while ($final = $results->fetch_assoc()) { ?>
 
 
-          <a href="orderdelete.php?del_id=<?php echo $final['id'] ?>">
-            <button style="color:red">Delete</button>
-          </a><hr>
+                  <tbody>
+                    <tr>
+                      <td>
 
+                          <h3><?php echo $final['id'] ?></h3><br>
 
-         <?php }
-          ?>
+                      </td>
+                      <td>
 
+                          <h3><?php echo $final['customer_id'] ?></h3><br>
+                      </td>
+                      <td>
+
+                          <h3><?php echo $final['address'] ?></h3><br>
+
+                      </td>
+                      <td>
+                        <h3><?php echo $final['phone'] ?></h3><br>
+                      </td>
+                      <td>
+                      <h3><?php echo $final['total'] ?></h3><br>
+                      </td>
+                      <td>
+                        <a href="ordershow.php?pro_id=<?php echo $final['id']?>">
+                          <button class="btn btn-primary btn-sm">View</button>
+                        </a>
+                        <a href="orderdelete.php?del_id=<?php echo $final['id'] ?>">
+                          <button class="btn btn-danger btn-sm">Delete</button>
+                        </a>
+                      </td>
+                    </tr>
+                  </tbody>
+                  <?php
+                }
+                ?>
+              </table>
+            </div>
 
 
 

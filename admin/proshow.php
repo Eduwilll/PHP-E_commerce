@@ -35,32 +35,47 @@ include('adminpartials/head.php');
       <!-- Small boxes (Stat box) -->
       <div class="row">
         <div class="col-sm-9">
+          <div class="container-fluid">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">NOME</th>
+                      <th scope="col">PREÇO</th>
+                      <th scope="col">DESCRIÇAO</th>
+                      <th scope="col">IMAGEM</th>
+                    </tr>
+                  </thead>
+                  <?php
+                  include('../partials/connect.php');
 
-          <?php
-          include('../partials/connect.php');
+                  $id=$_GET['pro_id'];
+                  $sql="SELECT * from products WHERE id='$id'";
+                  $results=$connect->query($sql);
 
-          $id=$_GET['pro_id'];
-          $sql="SELECT * from products WHERE id='$id'";
-          $results=$connect->query($sql);
-
-          $final=$results->fetch_assoc();        
-          ?>
-
-          <h3> Name : <?php echo $final['name']?> </h3><hr><br>
-
-          <h3> Price : <?php echo $final['price']?> </h3><hr><br>
-
-          <h3> Description : <?php echo $final['description']?> </h3><hr><br>
-          <img src="../<?php echo $final['picture'] ?>" alt="No File" style="height:300px; width:300px">
-
-
-
-
-
+                  $final=$results->fetch_assoc();        
+                  ?>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <h3><?php echo $final['name']?> </h3>
+                      </td>
+                      <td>
+                        <h3><?php echo $final['price']?> </h3>
+                      </td>
+                      <td>
+                        <h3><?php echo $final['description']?> </h3>
+                      </td>
+                      <td>
+                        <img src="../<?php echo $final['picture'] ?>" alt="No File" style="height:50px; width:50px">
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>  
+            </div>        
         </div>
 
       
-<div class="col-sm-3">
+  <div class="col-sm-3">
   
   </div>
 </div>
