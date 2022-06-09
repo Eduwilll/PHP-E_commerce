@@ -9,9 +9,9 @@ include("partials/head.php");
 <body class="animsition">
 
 	<?php
-		include("partials/header.php");
+	include("partials/header.php");
 	?>
-	
+
 	<!-- breadcrumb -->
 	<div class="container">
 		<div class="bread-crumb flex-w p-l-25 p-r-15 p-t-30 p-lr-0-lg">
@@ -25,7 +25,7 @@ include("partials/head.php");
 			</span>
 		</div>
 	</div>
-		
+
 
 	<!-- Shoping Cart -->
 	<div class="bg0 p-t-75 p-b-85">
@@ -44,64 +44,64 @@ include("partials/head.php");
 								</tr>
 								<?php
 								if (isset($_SESSION['cart'])) {
-									$total=0;
+									$total = 0;
 									foreach ($_SESSION['cart'] as $key => $value) {
-									$total=$total+$value['item_price']*$value['quantity'];
-									
+										$total = $total + $value['item_price'] * $value['quantity'];
 
-									
+
+
 								?>
-								<tr class="table_row">
-									<td class="column-1">
-									<div >
-										<form action="cartremove.php" method="post">
-											<button class="btn btn-sm btn-outline-danger" name="remove">Remover</button>
-											<input type="hidden" name="item_name" value='<?php echo $value['item_name']?>' />
-										</form>
-									</div>
-									</td>
-									<td class="column-2"><?php echo $value['item_name']?></td>
-									<td class="column-3">R$ <?php echo $value['item_price']?></td>
-									<td class="column-4">
-										<form action="cartupdate.php" method="post">
+										<tr class="table_row">
+											<td class="column-1">
+												<div>
+													<form action="cartremove.php" method="post">
+														<button class="btn btn-sm btn-outline-danger" name="remove">Remover</button>
+														<input type="hidden" name="item_name" value='<?php echo $value['item_name'] ?>' />
+													</form>
+												</div>
+											</td>
+											<td class="column-2"><?php echo $value['item_name'] ?></td>
+											<td class="column-3">R$ <?php echo $value['item_price'] ?></td>
+											<td class="column-5">
+												<form action="cartupdate.php" method="post">
 
-										<div class="wrap-num-product flex-w m-l-auto m-r-0">
-											<div class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m">
-												<i class="fs-16 zmdi zmdi-minus"></i>
-											</div>
+													<div class="wrap-num-product flex-w m-l-auto m-r-0">
+														<div class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m">
+															<i class="fs-16 zmdi zmdi-minus"></i>
+														</div>
 
-											<input name="quantity" class="mtext-104 cl3 txt-center num-product" type="number" value="<?php echo $value['quantity']?>">
+														<input name="quantity" class="mtext-104 cl3 txt-center num-product" type="number" value="<?php echo $value['quantity'] ?>">
 
-											<div class="btn-num-product-up cl8 hov-btn3 trans-04 flex-c-m">
-												<i class="fs-16 zmdi zmdi-plus"></i>
-											</div>
-										</div>
-									</td>
-									<td class="column-5">
-										<button class="btn btn-sm btn-primary" name="update">Update Cart</button>
-										<input type="hidden" name="item_name" value='<?php echo $value['item_name']?>' />
-										
-									</form>	
-									</td>
-								</tr>
-								
+														<div class="btn-num-product-up cl8 hov-btn3 trans-04 flex-c-m">
+															<i class="fs-16 zmdi zmdi-plus"></i>
+														</div>
+													</div>
+											</td>
+											<td class="column-5">
+												<button class="btn btn-sm btn-primary" name="update">Update Cart</button>
+												<input type="hidden" name="item_name" value='<?php echo $value['item_name'] ?>' />
+
+												</form>
+											</td>
+										</tr>
+
 								<?php }
-								}?>
+								} ?>
 							</table>
-							
+
 						</div>
 
 						<div class="flex-w flex-sb-m bor15 p-t-18 p-b-15 p-lr-40 p-lr-15-sm">
 							<div class="flex-w flex-m m-r-20 m-tb-5">
 								<input class="stext-104 cl2 plh4 size-117 bor13 p-lr-20 m-r-10 m-tb-5" type="text" name="coupon" placeholder="Coupon Code">
-									
+
 								<div class="flex-c-m stext-101 cl2 size-118 bg8 bor13 hov-btn3 p-lr-15 trans-04 pointer m-tb-5">
 									Apply coupon
 								</div>
 							</div>
 
-							
-							
+
+
 						</div>
 					</div>
 				</div>
@@ -121,52 +121,8 @@ include("partials/head.php");
 
 							<div class="size-209">
 								<span class="mtext-110 cl2">
-									R$ <?php echo $total?>
+									R$ <?php echo $total ?>
 								</span>
-							</div>
-						</div>
-
-						<div class="flex-w flex-t bor12 p-t-15 p-b-30">
-							<div class="size-208 w-full-ssm">
-								<span class="stext-110 cl2">
-									Shipping:
-								</span>
-							</div>
-
-							<div class="size-209 p-r-18 p-r-0-sm w-full-ssm">
-								<p class="stext-111 cl6 p-t-2">
-									There are no shipping methods available. Please double check your address, or contact us if you need any help.
-								</p>
-								
-								<div class="p-t-15">
-									<span class="stext-112 cl8">
-										Calculate Shipping
-									</span>
-
-									<div class="rs1-select2 rs2-select2 bor8 bg0 m-b-12 m-t-9">
-										<select class="js-select2" name="time">
-											<option>Select a country...</option>
-											<option>USA</option>
-											<option>UK</option>
-										</select>
-										<div class="dropDownSelect2"></div>
-									</div>
-
-									<div class="bor8 bg0 m-b-12">
-										<input class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="state" placeholder="State /  country">
-									</div>
-
-									<div class="bor8 bg0 m-b-22">
-										<input class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="postcode" placeholder="Postcode / Zip">
-									</div>
-									
-									<div class="flex-w">
-										<div class="flex-c-m stext-101 cl2 size-115 bg8 bor13 hov-btn3 p-lr-15 trans-04 pointer">
-											Update Totals
-										</div>
-									</div>
-										
-								</div>
 							</div>
 						</div>
 
@@ -179,7 +135,7 @@ include("partials/head.php");
 
 							<div class="size-209 p-t-1">
 								<span class="mtext-110 cl2">
-									R$ <?php echo $total?>
+									R$ <?php echo $total ?>
 								</span>
 							</div>
 						</div>
@@ -192,11 +148,12 @@ include("partials/head.php");
 			</div>
 		</div>
 	</div>
-	
-	<!-- Footer -->	
+
+	<!-- Footer -->
 	<?php
-		include ("partials/footer.php");
+	include("partials/footer.php");
 	?>
 
 </body>
+
 </html>
