@@ -1,8 +1,8 @@
 <?php
 
 $host="localhost";
-$user= "";
-$password="";
+$user= "anv";
+$password="f@tek";
 $dbname="phpstore";
 
 $connect= mysqli_connect($host,$user,$password,$dbname);
