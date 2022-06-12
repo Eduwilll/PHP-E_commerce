@@ -66,7 +66,9 @@ include('adminpartials/head.php');
                         <h3><?php echo $final['description']?> </h3>
                       </td>
                       <td>
-                        <img src="../<?php echo $final['picture'] ?>" alt="No File" style="height:50px; width:50px">
+                        <div class="zoom">
+                          <img src="../<?php echo $final['picture'] ?>" alt="No File" style="height:50px; width:50px">
+                        </div>
                       </td>
                     </tr>
                   </tbody>

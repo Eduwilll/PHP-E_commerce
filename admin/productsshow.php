@@ -57,7 +57,6 @@ include('adminpartials/head.php');
                 $results = $connect->query($sql);
                 while ($final = $results->fetch_assoc()) { ?>
 
-
                   <tbody>
                     <tr>
                       <td>
@@ -68,7 +67,8 @@ include('adminpartials/head.php');
                       <td>
                         <a href="proshow.php?pro_id=<?php echo $final['id'] ?>">
                           <h3><?php echo $final['name'] ?></h3><br>
-                        </a></td>
+                        </a>
+                      </td>
                       <td>
                         <a href="proshow.php?pro_id=<?php echo $final['id'] ?>">
                           <h3><?php echo $final['price'] ?></h3><br>
@@ -84,24 +84,24 @@ include('adminpartials/head.php');
                       </td>
                     </tr>
                   </tbody>
-                  <?php
+                <?php
                 }
                 ?>
               </table>
             </div>
           </div>
-
-
-          <div class="col-sm-3">
-          </div>
         </div>
-      </section>
-      <!-- /.content -->
+
+        <div class="col-sm-3">
+        </div>
     </div>
-    <!-- /.content-wrapper -->
-    <?php
-    include('adminpartials/footer.php');
-    ?>
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+  <?php
+  include('adminpartials/footer.php');
+  ?>
 </body>
 
 </html>
