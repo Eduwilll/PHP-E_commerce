@@ -43,6 +43,7 @@ include("partials/head.php");
 									<th class="column-5">Total</th>
 								</tr>
 								<?php
+                                $total = 0;
 								if (isset($_SESSION['cart'])) {
 									$total = 0;
 									foreach ($_SESSION['cart'] as $key => $value) {

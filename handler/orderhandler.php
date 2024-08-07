@@ -32,7 +32,7 @@ foreach ($_SESSION['cart'] as $key => $value) {
 }
 if ($payment=="paypal") {
 	$_SESSION['total']=$total;
-	header('location: paypal.php');
+	echo '<script>window.open("http://www.google.com/");</script>';
 }else{
 	echo "<script> alert('ORDER IS PLACED');
 		window.location.href='../index.php';
