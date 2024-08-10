@@ -39,3 +39,30 @@ Projeto desenvolvido como requisito para cumprimento da disciplina Laboratório 
 - Para o PHP embutido, execute:
    ```bash
    php -S localhost:8000
+
+## Contribuição
+- Fork este repositório.
+- Crie uma nova branch: `git checkout -b minha-nova-feature`
+- Faça suas alterações e commit: `git commit -m 'Adicionei uma nova feature'`
+- Faça um push para a branch: `git push origin minha-nova-feature`
+- Envie um Pull Request.
+
+## Licença
+
+Este projeto está licenciado sob a Licença MIT. Veja o arquivo LICENSE para mais detalhes.
+
+## Preview
+
+[![App Platorm](https://i.imgur.com/nhrY9U9.png)]()
+
+[![App Platorm](https://i.imgur.com/Y8gvO7K.png)]()
+
+[![App Platorm](https://i.imgur.com/SOgOOF9.jpeg)]()
+
+[![App Platorm](https://i.imgur.com/E7NK0Vg.jpeg)]()
+
+[![App Platorm](https://i.imgur.com/C5FxNJb.jpeg)]()
+
+[![App Platorm](https://i.imgur.com/QNYAimw.jpeg)]()
+
+[![App Platorm](https://i.imgur.com/P8tGdBy.png)]()
